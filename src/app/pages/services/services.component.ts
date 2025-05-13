@@ -10,17 +10,17 @@ export class ServicesComponent {
         {
           title: 'Advanced CCTV solutions',
           description: 'Enhance security with our state-of-the-art CCTV camera systems.',
-          image: 'https://images.unsplash.com/photo-1581090700227-1e8e1f98d3ec?auto=format&fit=crop&w=700&q=80'
+          image: 'https://cdn.b12.io/client_media/ueFzL4jO/e36fa986-3005-11f0-abd0-0242ac110002-jpg-hero_image.jpeg'
         },
         {
           title: 'Walkie-talkie communication devices',
           description: 'Stay connected with our reliable walkie-talkie devices for any situation.',
-          image: 'https://images.unsplash.com/photo-1600607689929-c7335f89a527?auto=format&fit=crop&w=700&q=80'
+          image: 'https://cdn.b12.io/client_media/ueFzL4jO/e3ddf1ca-3005-11f0-abd0-0242ac110002-jpg-hero_image.jpeg'
         },
         {
           title: 'Metal detection equipment',
           description: 'Discover hidden treasures with our advanced metal detection devices.',
-          image: 'https://images.unsplash.com/photo-1622021068890-cf82d4dc83f9?auto=format&fit=crop&w=700&q=80'
+          image: 'https://cdn.b12.io/client_media/ueFzL4jO/e3af2b42-3005-11f0-abd0-0242ac110002-jpg-hero_image.jpeg'
         }
       ];
 }

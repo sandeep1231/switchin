@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="text-center text-secondary mb-5">Expert Sales & Service</h2>
+    <!-- <p class="text-success fw-bold text-uppercase small">Expert Sales & Service</p> -->
+  <!-- <h2 class="fw-bold mb-5">Top-notch network and camera solutions</h2> -->
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let service of services">
+      <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+        <img [src]="service.image" class="w-100" style="height: 220px; object-fit: cover;" alt="{{service.title}}">
+        <div class="p-4 bg-white">
+          <h5 class="fw-semibold mb-2">{{ service.title }} <span class="text-primary">›</span></h5>
+          <p class="text-muted mb-0">{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  

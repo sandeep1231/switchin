@@ -1,0 +1,28 @@
+.card {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  
+      h5 span {
+        transform: translateX(5px);
+      }
+    }
+  
+    h5 span {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+  }
+  

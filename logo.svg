@@ -1,0 +1,16 @@
+<svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="220" height="60" fill="white"/>
+  <g>
+    <!-- Shield -->
+    <path d="M30 10 Q40 10 40 20 Q40 35 30 45 Q20 35 20 20 Q20 10 30 10 Z" fill="#1976d2" stroke="#1976d2" stroke-width="2"/>
+    <!-- Wireless waves -->
+    <path d="M30 15 Q35 20 30 25" stroke="#43a047" stroke-width="2" fill="none"/>
+    <path d="M30 20 Q37 25 30 30" stroke="#43a047" stroke-width="2" fill="none"/>
+    <!-- CCTV camera (simple) -->
+    <rect x="22" y="28" width="16" height="6" rx="2" fill="#333"/>
+    <circle cx="30" cy="31" r="2" fill="#fff"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="60" y="38" font-family="Poppins, Arial, sans-serif" font-size="24" fill="#1976d2" font-weight="bold">Switchin</text>
+  <text x="60" y="55" font-family="Poppins, Arial, sans-serif" font-size="14" fill="#43a047">Solutions</text>
+</svg>

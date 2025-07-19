@@ -34,14 +34,13 @@ onScroll(): void {
 //     this.menuOpen = !this.menuOpen;
 //   }
 
-//   collapseMenu() {
-//     const navbar = document.getElementById('navbarNav');
-//     if (navbar && navbar.classList.contains('show')) {
-//       const bsCollapse = bootstrap.Collapse.getInstance(navbar);
-//       if (bsCollapse) {
-//         bsCollapse.hide();
-//       }
-//       this.menuOpen = false;
-//     }
-//   }
+  collapseMenu() {
+    const navbar = document.getElementById('navbarNav');
+    if (navbar && navbar.classList.contains('show')) {
+      const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+      if (bsCollapse) {
+        bsCollapse.hide();
+      }
+    }
+  }
 }

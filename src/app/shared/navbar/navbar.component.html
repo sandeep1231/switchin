@@ -11,16 +11,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#home" [ngClass]="{ active: currentSection === 'home' }">Home</a>
+            <a class="nav-link" href="#home" [ngClass]="{ active: currentSection === 'home' }" (click)="collapseMenu()">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#about" [ngClass]="{ active: currentSection === 'about' }">About</a>
+            <a class="nav-link" href="#about" [ngClass]="{ active: currentSection === 'about' }" (click)="collapseMenu()">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services" [ngClass]="{ active: currentSection === 'services' }">Services</a>
+            <a class="nav-link" href="#services" [ngClass]="{ active: currentSection === 'services' }" (click)="collapseMenu()">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contact" [ngClass]="{ active: currentSection === 'contact' }">Contact</a>
+            <a class="nav-link" href="#contact" [ngClass]="{ active: currentSection === 'contact' }" (click)="collapseMenu()">Contact</a>
           </li>
         </ul>
       </div>

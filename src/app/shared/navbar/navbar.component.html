@@ -1,9 +1,24 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" [ngClass]="{ 'navbar-shrink': isShrunk }">
 
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#" style="font-family: 'Poppins', 'Montserrat', Arial, sans-serif; font-size: 2rem; letter-spacing: 2px;">
-        <span style="color:#fff; text-shadow: 2px 2px 8px #1976d2, 0 0 2px #43a047; font-weight:bold;">Switch</span>
-        <span class="navbar-in">In</span>
+      <a class="navbar-brand fw-bold" href="#" style="font-family: 'Poppins', 'Montserrat', Arial, sans-serif;">
+        <div class="brand-container">
+          <div class="brand-text" style="font-size: 2rem; letter-spacing: 2px;">
+            <span style="color:#fff; text-shadow: 2px 2px 8px #1976d2, 0 0 2px #43a047; font-weight:bold;">Switch</span>
+            <span class="navbar-in">In</span>
+          </div>
+          <div class="contact-numbers" style="display: flex; flex-direction: column; gap: 0.05rem; margin-top: 0.1rem; font-size: 0.7rem; color: #ffffff;">
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="#3cf409" class="contact-icon">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <span style="color: #ffffff; font-weight: 500;">+91 8249762491</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.3rem; margin-left: 14px;">
+              <span style="color: #ffffff; font-weight: 500;">+91 9439463666</span>
+            </div>
+          </div>
+        </div>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"

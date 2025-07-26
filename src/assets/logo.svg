@@ -1,0 +1,8 @@
+<svg width="240" height="70" viewBox="0 0 240 70" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="70" fill="none"/>
+  <!-- Sw -->
+  <rect width="240" height="70" fill="none"/>
+  <text x="20" y="50" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="48" fill="#1976d2" font-weight="bold" letter-spacing="2">Switch</text>
+  <text x="160" y="50" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="48" fill="#43a047" font-weight="bold" letter-spacing="2">In</text>
+  <text x="22" y="68" font-family="Poppins, Montserrat, Arial, sans-serif" font-size="24" fill="#888" font-weight="normal" letter-spacing="1">Solutions</text>
+</svg>

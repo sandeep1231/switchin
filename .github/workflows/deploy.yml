@@ -32,11 +32,11 @@ jobs:
 
       - name: Build Angular app
         run: |
-          npx ng build --configuration=production --base-href=/switchin/
+          npx ng build --configuration=production --base-href=/
 
       - name: Detect Angular output directory
         run: |
-          DIST_ROOT="dist/switchin/browser"
+          DIST_ROOT="dist/switchin"
           if [ -d "$DIST_ROOT/browser" ]; then
             echo "DIST=$DIST_ROOT/browser" >> $GITHUB_ENV
           else
@@ -58,4 +58,4 @@ jobs:
           # angular-cli-ghpages reads this to authenticate
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx angular-cli-ghpages --dir="$DIST" --no-silent
+          npx angular-cli-ghpages --dir="$DIST" --cname=www.switchinsolutions.com --no-silent

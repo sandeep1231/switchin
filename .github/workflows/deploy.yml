@@ -36,7 +36,7 @@ jobs:
 
       - name: Detect Angular output directory
         run: |
-          DIST_ROOT="dist/switchin"
+          DIST_ROOT="dist/switchin/browser"
           if [ -d "$DIST_ROOT/browser" ]; then
             echo "DIST=$DIST_ROOT/browser" >> $GITHUB_ENV
           else

@@ -6,9 +6,11 @@ on:
       - master
   workflow_dispatch:
 
-# Needed to push to gh-pages via GITHUB_TOKEN
+# Permissions for deploying with GitHub Pages actions
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 concurrency:
   group: pages-deploy
@@ -17,6 +19,9 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -48,14 +53,18 @@ jobs:
         run: |
           cp -f "$DIST/index.html" "$DIST/404.html"
 
-      - name: Configure Git identity for deploy
+      - name: Write CNAME for custom domain
         run: |
-          git config --global user.name "${{ github.actor }}"
-          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          echo "www.switchinsolutions.com" > "$DIST/CNAME"
 
-      - name: Deploy to GitHub Pages (gh-pages branch)
-        env:
-          # angular-cli-ghpages reads this to authenticate
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          npx angular-cli-ghpages --dir="$DIST" --cname=www.switchinsolutions.com --no-silent
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.DIST }}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -48,6 +48,11 @@ jobs:
         run: |
           cp -f "$DIST/index.html" "$DIST/404.html"
 
+      - name: Configure Git identity for deploy
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
       - name: Deploy to GitHub Pages (gh-pages branch)
         env:
           # angular-cli-ghpages reads this to authenticate

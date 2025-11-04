@@ -34,13 +34,23 @@ jobs:
         run: |
           npx ng build --configuration=production --base-href=/switchin/
 
+      - name: Detect Angular output directory
+        run: |
+          DIST_ROOT="dist/switchin"
+          if [ -d "$DIST_ROOT/browser" ]; then
+            echo "DIST=$DIST_ROOT/browser" >> $GITHUB_ENV
+          else
+            echo "DIST=$DIST_ROOT" >> $GITHUB_ENV
+          fi
+          echo "Resolved DIST=$DIST"
+
       - name: Add SPA fallback (404.html)
         run: |
-          cp -f dist/switchin/index.html dist/switchin/404.html
+          cp -f "$DIST/index.html" "$DIST/404.html"
 
       - name: Deploy to GitHub Pages (gh-pages branch)
         env:
           # angular-cli-ghpages reads this to authenticate
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx angular-cli-ghpages --dir=dist/switchin --no-silent
+          npx angular-cli-ghpages --dir="$DIST" --no-silent

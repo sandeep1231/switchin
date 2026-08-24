@@ -1,30 +1,78 @@
 <div class="container">
-    <h2 class="text-center text-secondary mb-4">About SwitchIn</h2>
-  
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <p class="lead">
-          SwitchIn is a trusted name in the field of tech and network services, delivering reliable communication and surveillance solutions across the region.
-          We specialize in installing and supporting advanced security systems, networking towers, and communication devices.
-        </p>
-  
-        <p>
-          Our mission is to ensure safety and connectivity for every business and home we serve. With a strong commitment to innovation and customer satisfaction,
-          we provide high-quality products and services like CCTV cameras, walkie-talkies, radios, and metal detectors.
-        </p>
-  
-        <p>
-          Whether it's a small-scale setup or a full enterprise deployment, our team brings years of experience and passion to every project.
-        </p>
-  
-        <h4 class="mt-5 text-primary">Why Choose SwitchIn?</h4>
-        <ul class="list-group list-group-flush mt-3">
-          <li class="list-group-item">✅ Quality products at competitive prices</li>
-          <li class="list-group-item">✅ Expert technicians and support team</li>
-          <li class="list-group-item">✅ End-to-end installation and maintenance</li>
-          <li class="list-group-item">✅ Trusted by clients in both public and private sectors</li>
-        </ul>
+  <!-- Page Header -->
+  <div class="section-header" data-aos="fade-up">
+    <h2>About Switchin Solutions</h2>
+    <p>Delivering security, communication & IT excellence since our founding</p>
+  </div>
+
+  <!-- Company Story -->
+  <div class="row align-items-center g-5 mb-5" data-aos="fade-up">
+    <div class="col-lg-6">
+      <p class="text-teal fw-semibold text-uppercase small mb-2">Our Story</p>
+      <h3>A Trusted Name in Security & Communication</h3>
+      <p class="text-muted mt-3">
+        SwitchIn is a trusted name in the field of tech and network services, delivering reliable communication and 
+        surveillance solutions across Odisha. We specialize in installing and supporting advanced security systems, 
+        networking towers, and communication devices.
+      </p>
+      <p class="text-muted">
+        Our mission is to ensure safety and connectivity for every business and home we serve. 
+        With a strong commitment to innovation and customer satisfaction, we provide high-quality 
+        products and services like CCTV cameras, walkie-talkies, radios, and metal detectors.
+      </p>
+      <p class="text-muted">
+        Whether it's a small-scale setup or a full enterprise deployment, our team brings years of 
+        experience and passion to every project.
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <div class="story-image">
+        <img src="https://images.pexels.com/photos/8636591/pexels-photo-8636591.jpeg?auto=compress&cs=tinysrgb&w=800" 
+             alt="Switchin Solutions team" class="img-fluid rounded-4 shadow" loading="lazy">
       </div>
     </div>
   </div>
+
+  <!-- Mission & Vision -->
+  <div class="row g-4 mb-5" data-aos="fade-up">
+    <div class="col-md-6">
+      <div class="card mission-card h-100 border-0 p-4">
+        <div class="icon-box mb-3"><i class="bi bi-bullseye"></i></div>
+        <h4>Our Mission</h4>
+        <p class="text-muted mb-0">
+          To provide top-quality security and communication solutions that protect businesses and 
+          connect communities, with an unwavering focus on reliability, innovation, and customer satisfaction.
+        </p>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card vision-card h-100 border-0 p-4">
+        <div class="icon-box mb-3"><i class="bi bi-eye-fill"></i></div>
+        <h4>Our Vision</h4>
+        <p class="text-muted mb-0">
+          To become Eastern India's most trusted technology partner for security infrastructure, 
+          wireless communication, and modern IT solutions, empowering businesses of all sizes.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- How We Work -->
+  <div class="process-section" data-aos="fade-up">
+    <div class="section-header">
+      <h2>How We Work</h2>
+      <p>Our streamlined process from first call to ongoing support</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" *ngFor="let step of processSteps; let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100">
+        <div class="card process-card h-100 border-0 text-center p-4">
+          <div class="step-number">{{ i + 1 }}</div>
+          <div class="process-icon mb-3"><i class="bi {{ step.icon }}"></i></div>
+          <h5>{{ step.title }}</h5>
+          <p class="text-muted small mb-0">{{ step.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   

@@ -7,27 +7,17 @@ import { Component } from '@angular/core';
   standalone: false,
 })
 export class HomeComponent {
-  services = [
-    { title: 'CCTV Installation', description: 'Complete surveillance solutions for homes and businesses.' },
-    { title: 'Tower Setup', description: 'Network towers installation and maintenance services.' },
-    { title: 'Walkie-Talkie Support', description: 'Sales and support of radio communication devices.' }
+  stats = [
+    { icon: 'bi-people-fill', value: '200+', label: 'Happy Clients' },
+    { icon: 'bi-clipboard-check-fill', value: '500+', label: 'Projects Completed' },
+    { icon: 'bi-award-fill', value: '8+', label: 'Years Experience' },
+    { icon: 'bi-headset', value: '24/7', label: 'Customer Support' }
   ];
 
-  products = [
-    {
-      title: 'HD CCTV Camera',
-      description: 'High-definition camera for 24/7 monitoring.',
-      image: 'https://via.placeholder.com/400x250?text=CCTV+Camera'
-    },
-    {
-      title: 'Walkie-Talkie',
-      description: 'Reliable short-range radio communication device.',
-      image: 'https://via.placeholder.com/400x250?text=Walkie+Talkie'
-    },
-    {
-      title: 'Metal Detector',
-      description: 'Security-grade metal detection equipment.',
-      image: 'https://via.placeholder.com/400x250?text=Metal+Detector'
-    }
+  whyChoose = [
+    { icon: 'bi-gem', title: 'Quality Products', desc: 'Only the best equipment from trusted manufacturers at competitive prices.' },
+    { icon: 'bi-person-gear', title: 'Expert Team', desc: 'Certified technicians delivering flawless installation and ongoing support.' },
+    { icon: 'bi-wrench-adjustable', title: 'Full Service', desc: 'Consultation, installation, and maintenance — everything end-to-end.' },
+    { icon: 'bi-building-check', title: 'Trusted Partner', desc: 'Relied upon by government, schools, hospitals, and enterprises across Odisha.' }
   ];
 }

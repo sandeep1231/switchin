@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { WhatsappService } from '../../shared/services/whatsapp.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,14 +12,24 @@ export class ContactComponent {
   contact = {
     name: '',
     email: '',
+    phone: '',
+    subject: '',
     message: ''
   };
 
-  onSubmit() {
-    const phone = '918249762491'; // WhatsApp number without +
-    const msg = `Name: ${this.contact.name}%0AEmail: ${this.contact.email}%0AMessage: ${this.contact.message}`;
-    const url = `https://wa.me/${phone}?text=${msg}`;
-    window.open(url, '_blank');
-    this.contact = { name: '', email: '', message: '' };
+  constructor(private whatsapp: WhatsappService) {}
+
+  onSubmit(form: NgForm) {
+    if (form.invalid) return;
+    const parts = [
+      `Name: ${this.contact.name}`,
+      `Email: ${this.contact.email}`,
+      this.contact.phone ? `Phone: ${this.contact.phone}` : '',
+      this.contact.subject ? `Subject: ${this.contact.subject}` : '',
+      `Message: ${this.contact.message}`
+    ].filter(Boolean);
+    this.whatsapp.open(parts.join('\n'));
+    this.contact = { name: '', email: '', phone: '', subject: '', message: '' };
+    form.resetForm();
   }
 }

@@ -1,23 +1,111 @@
 <div class="container">
-    <h2 class="text-center text-secondary mb-4">Contact Us</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form (ngSubmit)="onSubmit()">
-          <div class="mb-3">
-            <label class="form-label">Name</label>
-            <input class="form-control" type="text" [(ngModel)]="contact.name" name="name" required>
+  <div class="section-header" data-aos="fade-up">
+    <h2>Get In Touch</h2>
+    <p>Have a question or need a quote? We'd love to hear from you.</p>
+  </div>
+
+  <div class="row g-5">
+    <!-- Contact Form -->
+    <div class="col-lg-7" data-aos="fade-up">
+      <div class="card border-0 p-4 p-md-5">
+        <h4 class="mb-4">Send Us a Message</h4>
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name *</label>
+              <input class="form-control" type="text" [(ngModel)]="contact.name" name="name" required #name="ngModel" placeholder="Your name">
+              <div class="text-danger small mt-1" *ngIf="name.invalid && name.touched">Name is required</div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email Address *</label>
+              <input class="form-control" type="email" [(ngModel)]="contact.email" name="email" required email #email="ngModel" placeholder="you@example.com">
+              <div class="text-danger small mt-1" *ngIf="email.invalid && email.touched">
+                <span *ngIf="email.errors?.['required']">Email is required</span>
+                <span *ngIf="email.errors?.['email']">Please enter a valid email</span>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input class="form-control" type="tel" [(ngModel)]="contact.phone" name="phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Subject</label>
+              <select class="form-control form-select" [(ngModel)]="contact.subject" name="subject">
+                <option value="">Select a topic</option>
+                <option value="CCTV">CCTV Installation</option>
+                <option value="Walkie-Talkie">Walkie-Talkie</option>
+                <option value="Metal Detector">Metal Detector</option>
+                <option value="Tower Setup">Tower Setup</option>
+                <option value="IT Consulting">IT Consulting</option>
+                <option value="AMC">AMC & Support</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Your Message *</label>
+              <textarea class="form-control" rows="5" [(ngModel)]="contact.message" name="message" required #message="ngModel" placeholder="Tell us about your requirements..."></textarea>
+              <div class="text-danger small mt-1" *ngIf="message.invalid && message.touched">Message is required</div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="contactForm.invalid">
+                <i class="bi bi-whatsapp me-2"></i> Send via WhatsApp
+              </button>
+            </div>
           </div>
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input class="form-control" type="email" [(ngModel)]="contact.email" name="email" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Message</label>
-            <textarea class="form-control" rows="4" [(ngModel)]="contact.message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
       </div>
     </div>
+
+    <!-- Contact Info Sidebar -->
+    <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="contact-info-card mb-4">
+        <h4 class="mb-4">Contact Information</h4>
+        <div class="info-item">
+          <div class="info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <strong>Our Office</strong>
+            <p class="mb-0">181, Kanan Shree Villa, Gayatree Vihar, Patia,<br>near Punjab National Bank, Bhubaneswar, 751024</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <strong>Call Us</strong>
+            <p class="mb-0"><a href="tel:+918249762491">+91 82497 62491</a></p>
+            <p class="mb-0"><a href="tel:+919439463666">+91 94394 63666</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <strong>Email Us</strong>
+            <p class="mb-0"><a href="mailto:info@switchinsolutions.com">info&#64;switchinsolutions.com</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="bi bi-clock-fill"></i></div>
+          <div>
+            <strong>Business Hours</strong>
+            <p class="mb-0">Mon – Sat: 9:00 AM – 6:00 PM</p>
+            <p class="mb-0">Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-wrapper rounded-4 overflow-hidden shadow-sm">
+        <iframe
+          src="https://www.google.com/maps?q=20.3399366,85.822092&z=17&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Switchin Solutions location in Bhubaneswar"></iframe>
+      </div>
+      <div class="text-center mt-2">
+        <a href="https://maps.app.goo.gl/4JLxHaNseF7GoKjXA" target="_blank" rel="noopener noreferrer" class="small">
+          <i class="bi bi-geo-alt-fill me-1"></i>Open in Google Maps
+        </a>
+      </div>
+    </div>
   </div>
+</div>
   

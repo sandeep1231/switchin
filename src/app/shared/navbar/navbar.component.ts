@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { WhatsappService } from '../services/whatsapp.service';
 declare var bootstrap: any;
 @Component({
   selector: 'app-navbar',
@@ -9,30 +10,51 @@ declare var bootstrap: any;
 
 export class NavbarComponent {
   currentSection: string = 'home';
-
   isShrunk = false;
+  topBarHeight = 0;
 
-@HostListener('window:scroll', [])
-onScroll(): void {
-  const sections = ['home', 'about', 'services', 'contact'];
-  for (const section of sections) {
-    const el = document.getElementById(section);
-    if (el) {
-      const rect = el.getBoundingClientRect();
-      if (rect.top <= 100 && rect.bottom >= 100) {
-        this.currentSection = section;
-        break;
-      }
-    }
+  constructor(private whatsapp: WhatsappService) {}
+
+  getQuote(event: Event): void {
+    event.preventDefault();
+    this.whatsapp.open("Hi, I'd like a quote");
+    this.collapseMenu();
   }
 
-  this.isShrunk = window.scrollY > 50;
-}
-// menuOpen = false;
+  ngOnInit(): void {
+    this.updateTopBarHeight();
+  }
 
-//   toggleIcon() {
-//     this.menuOpen = !this.menuOpen;
-//   }
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    const sections = ['home', 'about', 'services', 'products', 'testimonials', 'contact'];
+    for (const section of sections) {
+      const el = document.getElementById(section);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 120 && rect.bottom >= 120) {
+          this.currentSection = section;
+          break;
+        }
+      }
+    }
+    this.isShrunk = window.scrollY > 50;
+    this.updateTopBarHeight();
+  }
+
+  @HostListener('window:resize', [])
+  onResize(): void {
+    this.updateTopBarHeight();
+  }
+
+  private updateTopBarHeight(): void {
+    const topBar = document.querySelector('.top-bar') as HTMLElement;
+    if (topBar && window.innerWidth >= 992) {
+      this.topBarHeight = this.isShrunk ? 0 : topBar.offsetHeight;
+    } else {
+      this.topBarHeight = 0;
+    }
+  }
 
   collapseMenu() {
     const navbar = document.getElementById('navbarNav');

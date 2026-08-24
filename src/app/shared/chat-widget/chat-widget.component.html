@@ -1,0 +1,47 @@
+<!-- Floating Chat Button -->
+<button class="chat-fab" (click)="toggleChat()" [class.open]="isOpen" aria-label="Open chat assistant">
+  <i class="bi" [ngClass]="isOpen ? 'bi-x-lg' : 'bi-chat-dots-fill'"></i>
+</button>
+
+<!-- Chat Panel -->
+<div class="chat-panel" [class.open]="isOpen">
+  <!-- Header -->
+  <div class="chat-header">
+    <div class="chat-header-info">
+      <div class="chat-avatar">
+        <span>S</span>
+      </div>
+      <div>
+        <strong>SwitchIn Assistant</strong>
+        <span class="chat-status">Online</span>
+      </div>
+    </div>
+    <button class="chat-close" (click)="toggleChat()" aria-label="Close chat">
+      <i class="bi bi-dash-lg"></i>
+    </button>
+  </div>
+
+  <!-- Messages -->
+  <div class="chat-messages" #messagesContainer>
+    <div *ngFor="let msg of messages" class="chat-bubble" [ngClass]="msg.role">
+      <div class="bubble-content">{{ msg.content }}</div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="chat-bubble assistant" *ngIf="isLoading">
+      <div class="typing-indicator">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="chat-input">
+    <input type="text" [(ngModel)]="userInput" (keydown)="onKeyDown($event)" 
+           placeholder="Type your message..." [disabled]="isLoading"
+           class="chat-input-field">
+    <button class="chat-send" (click)="sendMessage()" [disabled]="!userInput.trim() || isLoading" aria-label="Send message">
+      <i class="bi bi-send-fill"></i>
+    </button>
+  </div>
+</div>

@@ -12,6 +12,13 @@ export class AppComponent {
   ngOnInit() {
     AOS.init();
     this.onScroll();
+
+    // Images and async content can change page layout after AOS calculates
+    // its scroll-trigger offsets, leaving elements stuck mid-animation
+    // (e.g. translateY(100px)) and creating visual gaps. Recalculate once
+    // everything has actually loaded and settled.
+    window.addEventListener('load', () => AOS.refresh());
+    setTimeout(() => AOS.refresh(), 1000);
   }
   @HostListener('window:scroll', [])
   onScroll(): void {

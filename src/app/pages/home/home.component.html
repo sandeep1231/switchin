@@ -1,14 +1,51 @@
-<!-- <div class="container text-center">
-    <h1 class="text-primary fw-bold mb-4">Welcome to SwitchIn</h1>
-    <p class="lead mb-5">Your trusted partner in network and security solutions</p>
-    <img src="https://cdn.b12.io/client_media/ueFzL4jO/dff5e284-3005-11f0-abd0-0242ac110002-jpg-hero_image.jpeg"
-         class="img-fluid rounded shadow" alt="Hero">
-  </div> -->
-  <section class="hero-banner d-flex align-items-center justify-content-center text-white">
-    <div class="text-center hero-content">
-      <h1 class="display-4 fw-bold">Reliable<br />communication gear</h1>
-      <p class="lead mb-4">Your trusted source for modern network solutions</p>
-      <a href="#services" class="btn btn-lg btn-success px-4">VIEW SERVICES</a>
+<!-- Hero Section -->
+<section class="hero-banner d-flex align-items-center justify-content-center text-white">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content text-center">
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Trusted Security & Communication Partner</p>
+    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+      Reliable Communication<br>& Surveillance Solutions
+    </h1>
+    <p class="hero-desc" data-aos="fade-up" data-aos-delay="300">
+      CCTV cameras, walkie-talkies, metal detectors, tower setup & IT consulting — all under one roof in Bhubaneswar.
+    </p>
+    <div class="hero-cta" data-aos="fade-up" data-aos-delay="400">
+      <a href="#services" class="btn btn-primary btn-lg me-3">Our Services</a>
+      <a href="#contact" class="btn btn-outline-light btn-lg">Contact Us</a>
     </div>
-  </section>
-  
+  </div>
+</section>
+
+<!-- Trust Stats -->
+<section class="stats-section" data-aos="fade-up">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3" *ngFor="let stat of stats">
+        <div class="stat-item">
+          <i class="bi {{ stat.icon }}"></i>
+          <h3>{{ stat.value }}</h3>
+          <p>{{ stat.label }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Strip -->
+<section class="why-us-strip py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Choose SwitchIn?</h2>
+      <p>The advantages that set us apart</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3" *ngFor="let item of whyChoose; let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100">
+        <div class="card choose-card h-100 border-0 text-center p-4">
+          <div class="choose-icon mb-3"><i class="bi {{ item.icon }}"></i></div>
+          <h5>{{ item.title }}</h5>
+          <p class="text-muted small mb-0">{{ item.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

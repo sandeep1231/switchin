@@ -14,6 +14,7 @@ import { ServicesComponent } from './pages/services/services.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { TestimonialsComponent } from './pages/testimonials/testimonials.component';
 import { WalkieTalkieRentalComponent } from './pages/walkie-talkie-rental/walkie-talkie-rental.component';
+import { LaptopRentalComponent } from './pages/laptop-rental/laptop-rental.component';
 import { ChatWidgetComponent } from './shared/chat-widget/chat-widget.component';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ChatWidgetComponent } from './shared/chat-widget/chat-widget.component'
     ProductsComponent,
     TestimonialsComponent,
     WalkieTalkieRentalComponent,
+    LaptopRentalComponent,
     ChatWidgetComponent
   ],
   imports: [

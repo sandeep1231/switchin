@@ -60,6 +60,13 @@ export class ServicesComponent {
       features: ['Network design & audit', 'Structured cabling', 'Server room setup', 'System integration']
     },
     {
+      title: 'Laptop Rentals',
+      description: 'Short-term and long-term laptop rentals for corporate training, events, temporary staff, and business travel — no upfront purchase required.',
+      icon: 'bi-laptop',
+      features: ['Short-term event rentals', 'Long-term corporate rentals', 'Bulk fleet availability', 'Pre-configured & ready to use'],
+      link: '/laptop-rental'
+    },
+    {
       title: 'AMC & Technical Support',
       description: 'Annual Maintenance Contracts covering scheduled inspections, priority repairs, and round-the-clock technical support for all our systems.',
       icon: 'bi-tools',

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="100%" stop-color="#5EEAD4"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0A1628"/>
+
+  <!-- antenna -->
+  <line x1="40" y1="9" x2="34" y2="20" stroke="url(#g)" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="40" cy="9" r="2.2" fill="url(#g)"/>
+
+  <!-- body -->
+  <rect x="21" y="18" width="20" height="37" rx="5" fill="url(#g)"/>
+
+  <!-- speaker grille -->
+  <rect x="25" y="23" width="12" height="7" rx="2" fill="#0A1628"/>
+
+  <!-- screen -->
+  <rect x="25" y="33" width="12" height="7" rx="1.5" fill="#0A1628"/>
+
+  <!-- side button -->
+  <rect x="18" y="27" width="3" height="6" rx="1.5" fill="url(#g)"/>
+
+  <!-- keypad dots -->
+  <circle cx="28" cy="46" r="1.8" fill="#0A1628"/>
+  <circle cx="34" cy="46" r="1.8" fill="#0A1628"/>
+  <circle cx="28" cy="51" r="1.8" fill="#0A1628"/>
+  <circle cx="34" cy="51" r="1.8" fill="#0A1628"/>
+</svg>

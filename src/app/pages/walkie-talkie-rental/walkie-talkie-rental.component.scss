@@ -1,0 +1,130 @@
+/* === Hero === */
+.rental-hero {
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.06), transparent);
+  padding-top: 150px;
+  padding-bottom: 48px;
+
+  @media (max-width: 991px) {
+    padding-top: 110px;
+  }
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider: '/';
+  font-size: 0.85rem;
+
+  a {
+    color: #64748B;
+    text-decoration: none;
+    &:hover { color: #0D9488; }
+  }
+
+  .active {
+    color: #0D9488;
+    font-weight: 600;
+  }
+}
+
+/* === Use Cases (matches home page "Why Choose" cards) === */
+.choose-card {
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0 !important;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(10, 22, 40, 0.1);
+    border-color: #0D9488 !important;
+  }
+}
+
+.choose-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(13, 148, 136, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  i {
+    font-size: 1.5rem;
+    color: #0D9488;
+  }
+}
+
+/* === Rental Plans (matches about page mission/vision cards) === */
+.mission-card {
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.05), rgba(13, 148, 136, 0.02));
+  border-left: 4px solid #0D9488 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+}
+
+.feature-tag {
+  font-size: 0.82rem;
+  color: #64748B;
+  white-space: nowrap;
+
+  i {
+    margin-right: 0.3rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* === How It Works (matches about page process cards) === */
+.process-card {
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0 !important;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(10, 22, 40, 0.1);
+    border-color: #0D9488 !important;
+  }
+}
+
+.step-number {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0D9488;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === FAQ Accordion === */
+.accordion-button:not(.collapsed) {
+  color: #0D9488;
+  background-color: rgba(13, 148, 136, 0.06);
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+/* === Final CTA Banner === */
+.highlight-banner {
+  background: linear-gradient(135deg, #0A1628 0%, #132036 100%);
+}

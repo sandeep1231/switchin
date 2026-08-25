@@ -38,7 +38,8 @@ export class ServicesComponent {
       title: 'Walkie-Talkie Rentals',
       description: 'Short-term and long-term walkie-talkie rentals for events, construction sites, and temporary teams — no upfront purchase required.',
       icon: 'bi-calendar-range',
-      features: ['Short-term event rentals', 'Long-term site rentals', 'Bulk fleet availability', 'Same-day setup support']
+      features: ['Short-term event rentals', 'Long-term site rentals', 'Bulk fleet availability', 'Same-day setup support'],
+      link: '/walkie-talkie-rental'
     },
     {
       title: 'Metal Detection Equipment',

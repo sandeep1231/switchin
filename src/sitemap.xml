@@ -16,6 +16,11 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://www.switchinsolutions.com/walkie-talkie-rental</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
     <loc>https://www.switchinsolutions.com/#products</loc>
     <priority>0.9</priority>
     <changefreq>monthly</changefreq>

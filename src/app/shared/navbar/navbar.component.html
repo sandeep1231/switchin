@@ -16,7 +16,7 @@
 <!-- Main Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark" [ngClass]="{ 'navbar-shrink': isShrunk }" [style.top.px]="topBarHeight">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" routerLink="/" fragment="home">
       <div class="brand-text">
         <span class="brand-switch">Switch</span><span class="brand-in">In</span>
       </div>
@@ -31,22 +31,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
         <li class="nav-item">
-          <a class="nav-link" href="#home" [ngClass]="{ active: currentSection === 'home' }" (click)="collapseMenu()">Home</a>
+          <a class="nav-link" routerLink="/" fragment="home" [ngClass]="{ active: currentSection === 'home' }" (click)="collapseMenu()">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about" [ngClass]="{ active: currentSection === 'about' }" (click)="collapseMenu()">About</a>
+          <a class="nav-link" routerLink="/" fragment="about" [ngClass]="{ active: currentSection === 'about' }" (click)="collapseMenu()">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#services" [ngClass]="{ active: currentSection === 'services' }" (click)="collapseMenu()">Services</a>
+          <a class="nav-link" routerLink="/" fragment="services" [ngClass]="{ active: currentSection === 'services' }" (click)="collapseMenu()">Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#products" [ngClass]="{ active: currentSection === 'products' }" (click)="collapseMenu()">Products</a>
+          <a class="nav-link" routerLink="/" fragment="products" [ngClass]="{ active: currentSection === 'products' }" (click)="collapseMenu()">Products</a>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#testimonials" [ngClass]="{ active: currentSection === 'testimonials' }" (click)="collapseMenu()">Testimonials</a>
-        </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="#contact" [ngClass]="{ active: currentSection === 'contact' }" (click)="collapseMenu()">Contact</a>
+          <a class="nav-link" routerLink="/walkie-talkie-rental" (click)="collapseMenu()">Rentals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" fragment="contact" [ngClass]="{ active: currentSection === 'contact' }" (click)="collapseMenu()">Contact</a>
         </li>
         <li class="nav-item ms-lg-3">
           <a class="btn btn-cta" href="#" (click)="getQuote($event)">
